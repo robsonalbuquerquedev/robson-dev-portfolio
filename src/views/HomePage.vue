@@ -3,7 +3,7 @@
         <NavigationMenu />
 
         <!-- Seção Sobre -->
-        <section class="about">
+        <section class="about" id="sobre">
             <div class="about-content">
                 <div class="about-text">
                     <h2>Olá, meu nome é <span>Robson Albuquerque</span></h2>
@@ -28,6 +28,44 @@
 
                 <div class="about-image">
                     <img class="avatar" src="../assets/img/robson.png" alt="Robson Albuquerque">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section class="projects" id="projetos">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">Gerenciamento de Recursos</h3>
+                    <img src="../assets/img/projeto01.png" alt="Projeto Gerenciamento de Recursos"
+                        class="project-image">
+                    <p class="project-description">
+                        O <strong>ResourcesManagement</strong> é uma aplicação web desenvolvida com Vue.js e Spring Boot
+                        para
+                        gerenciar salas e laboratórios em uma instituição de ensino.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://rma98.github.io/resourcesManagement/#/" target="_blank" class="btn">Visualizar
+                            Projeto</a>
+                        <a href="https://github.com/rma98/resourcesManagement.git" target="_blank" class="btn btn-repo">
+                            <i class="fab fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Monitora Palmares</h3>
+                    <img src="../assets/img/projeto02.png" alt="Projeto Monitora Palmares" class="project-image">
+                    <p class="project-description">
+                        O <strong>Monitora Palmares</strong> é um portal web, baseado em dados abertos, que auxilia a
+                        população a manter completo o esquema vacinal da COVID-19.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-disabled" onclick="return false;">Em Manutenção</a>
+                        <a href="#" class="btn btn-repo btn-disabled" onclick="return false;">
+                            <i class="fab fa-github"></i> Repositório Privado
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -195,6 +233,105 @@ export default {
     background-color: hsl(155, 41%, 85%);
 }
 
+/* 🔹 Seção Projetos */
+.projects {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #121212;
+    color: #fff;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* 🔹 Grid para projetos */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* 🔹 Estilização dos cards */
+.project-card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Imagens dos projetos */
+.project-image {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* 🔹 Título do projeto */
+.project-title {
+    font-size: 2rem;
+    margin: 15px 0;
+    color: #fff;
+}
+
+/* 🔹 Descrição */
+.project-description {
+    font-size: 1.7rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    padding: 2rem;
+}
+
+/* 🔹 Links dos projetos */
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-links a {
+    flex: 1;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fff;
+    background: #007bff;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 🔹 Botão desativado (quando não há link disponível) */
+.btn-disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 /* 🔹 Responsividade */
 @media (max-width: 768px) {
     .about-content {
@@ -208,6 +345,18 @@ export default {
 
     .social-links {
         justify-content: center;
+    }
+
+    .projects {
+        padding: 60px 5%;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-links {
+        flex-direction: column;
     }
 }
 </style>
