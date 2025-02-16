@@ -1,11 +1,14 @@
 <template>
     <header class="header">
+        <!-- Logo centralizada -->
         <a @click.prevent="scrollToSection('')" class="logo">RobsonDev</a>
 
+        <!-- Botão Menu (Hambúrguer) -->
         <button class="menu-toggle" @click="toggleMenu">
             <i :class="menuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
         </button>
 
+        <!-- Menu de Navegação Centralizado -->
         <nav class="navbar" :class="{ 'open': menuOpen }">
             <ul>
                 <li><a @click.prevent="scrollToSection('sobre')" :class="{ 'active': activeLink === 'sobre' }">Sobre</a>
@@ -17,6 +20,16 @@
                 <li><a @click.prevent="scrollToSection('contato')"
                         :class="{ 'active': activeLink === 'contato' }">Contato</a></li>
             </ul>
+
+            <!-- Ícones das redes sociais alinhados à direita no desktop e abaixo do menu no mobile -->
+            <div class="social-links" :class="{ 'mobile': menuOpen }">
+                <a href="https://github.com/rma98" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/robson-monteiro-de-albuquerque-8b3853230/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
         </nav>
     </header>
 </template>
@@ -63,7 +76,7 @@ export default {
     z-index: 1000;
 }
 
-/* 🔹 Logo */
+/* 🔹 Logo com a navegação */
 .logo {
     font-size: 2.4rem;
     font-weight: bold;
@@ -71,13 +84,22 @@ export default {
     text-decoration: none;
     transition: 0.3s;
     cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 25%;
 }
 
 .logo:hover {
     color: var(--primary-color);
 }
 
-/* 🔹 Menu padrão */
+/* 🔹 Menu centralizado */
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar ul {
     display: flex;
     list-style: none;
@@ -102,6 +124,24 @@ export default {
     color: #000;
 }
 
+/* Ícones das redes sociais dentro da nav */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
 /* 🔹 Botão de menu hambúrguer */
 .menu-toggle {
     display: none;
@@ -114,7 +154,7 @@ export default {
 }
 
 /* 🔹 Responsividade para dispositivos menores */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
     .menu-toggle {
         display: block;
     }
@@ -154,6 +194,18 @@ export default {
         display: block;
         width: 100%;
         padding: 1rem;
+    }
+
+    /* Ícones das redes sociais abaixo do menu no mobile */
+    .social-links {
+        margin-left: 0;
+        margin-top: 1.5rem;
+        justify-content: center;
+        display: none;
+    }
+
+    .social-links.mobile {
+        display: flex;
     }
 }
 </style>
