@@ -82,6 +82,8 @@ export default {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar a {
@@ -100,7 +102,7 @@ export default {
     color: #000;
 }
 
-/* 🔹 Botão de menu hambúrguer (aparece apenas em telas menores) */
+/* 🔹 Botão de menu hambúrguer */
 .menu-toggle {
     display: none;
     background: transparent;
@@ -108,6 +110,7 @@ export default {
     color: #fff;
     font-size: 2.5rem;
     cursor: pointer;
+    z-index: 1100;
 }
 
 /* 🔹 Responsividade para dispositivos menores */
@@ -126,17 +129,31 @@ export default {
         flex-direction: column;
         align-items: center;
         padding: 1rem 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
     }
 
     .navbar.open {
-        transform: translateY(0);
+        max-height: 500px;
+        /* Define um valor grande suficiente para exibir todo o menu */
     }
 
     .navbar ul {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
     }
 }
 </style>
