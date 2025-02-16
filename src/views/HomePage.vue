@@ -1,5 +1,6 @@
 <template>
     <main class="home">
+        <NavigationMenu />
         <section class="hero">
             <h1>Bem-vindo ao meu Portfólio!</h1>
             <p>Sou Robson Albuquerque, desenvolvedor apaixonado por tecnologia e inovação.</p>
@@ -9,46 +10,52 @@
 </template>
 
 <script>
+import NavigationMenu from "../components/NavigationMenu.vue";
 export default {
-    name: "HomePage"
+    name: "HomePage",
+    components: {
+        NavigationMenu,
+    },
 };
 </script>
 
 <style scoped>
+/* 🔹 Estilização para a seção Hero */
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: white;
+    padding: 0 2rem;
 }
 
-.hero {
-    max-width: 600px;
-}
-
-h1 {
+.hero h1 {
     font-size: 3rem;
-    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-p {
-    font-size: 1.8rem;
-    color: var(--text-color);
+.hero p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: var(--primary-color);
-    color: #fff;
+    padding: 1rem 2rem;
     font-size: 1.6rem;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
+    background: var(--primary-color);
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    opacity: 0.8;
+    background: #ffcc00;
+    transform: scale(1.05);
 }
 </style>
