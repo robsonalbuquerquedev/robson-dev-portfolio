@@ -11,10 +11,12 @@
         <!-- Menu de Navegação Centralizado -->
         <nav class="navbar" :class="{ 'open': menuOpen }">
             <ul>
+                <li><a @click.prevent="scrollToSection('inicio')" :class="{ 'active': activeLink === 'inicio' }">Início</a>
+                </li>
                 <li><a @click.prevent="scrollToSection('sobre')" :class="{ 'active': activeLink === 'sobre' }">Sobre</a>
                 </li>
-                <li><a @click.prevent="scrollToSection('experiencia')"
-                        :class="{ 'active': activeLink === 'experiencia' }">Experiência</a></li>
+                <!-- <li><a @click.prevent="scrollToSection('experiencia')"
+                        :class="{ 'active': activeLink === 'experiencia' }">Experiência</a></li> -->
                 <li><a @click.prevent="scrollToSection('projetos')"
                         :class="{ 'active': activeLink === 'projetos' }">Projetos</a></li>
                 <li><a @click.prevent="scrollToSection('contato')"
