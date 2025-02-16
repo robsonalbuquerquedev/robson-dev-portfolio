@@ -1,0 +1,92 @@
+/* Definição de variáveis globais para facilitar a manutenção */
+:root {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+
+    /* Cores principais */
+    --primary-color: #1e90ff;
+    /* Azul vívido */
+    --secondary-color: #ff8c00;
+    /* Laranja vibrante */
+    --background-color: #f8f9fa;
+    /* Cinza claro */
+    --text-color: #333;
+    /* Cinza escuro */
+
+    /* Tipografia */
+    --font-primary: 'Inter', sans-serif;
+}
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    line-height: 1.6;
+}
+
+/* Melhorias na tipografia */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    /* 16px padrão */
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Imagens e mídias responsivas */
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Melhorando a acessibilidade e usabilidade */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Listas sem estilos padrão */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Links sem sublinhado e com efeito ao passar o mouse */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Melhorando a rolagem em dispositivos */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+}
