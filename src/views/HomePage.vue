@@ -9,6 +9,9 @@
                     <h2>Olá, meu nome é <span>Robson Albuquerque</span></h2>
                     <p class="subtitle">Transformando ideias em experiências digitais que fazem a diferença.</p>
 
+                    <!-- ✅ Efeito de digitação para Desenvolvedor Frontend -->
+                    <p class="typing">{{ typedText }}</p>
+
                     <div class="buttons">
                         <a href="/robson-cv.pdf" download class="btn">Download CV</a>
                         <a href="https://wa.me/+5581971168633" target="_blank" class="btn btn-contact">Contato</a>
@@ -38,6 +41,25 @@ export default {
     name: "HomePage",
     components: {
         NavigationMenu,
+    },
+    data() {
+        return {
+            fullText: "Desenvolvedor Frontend",
+            typedText: "",
+            typingIndex: 0,
+        };
+    },
+    mounted() {
+        this.typeText();
+    },
+    methods: {
+        typeText() {
+            if (this.typingIndex < this.fullText.length) {
+                this.typedText += this.fullText[this.typingIndex];
+                this.typingIndex++;
+                setTimeout(this.typeText, 100); // Controla a velocidade da digitação (100ms)
+            }
+        },
     },
 };
 </script>
@@ -87,6 +109,27 @@ export default {
     font-size: 1.8rem;
     color: #ddd;
     margin-bottom: 2rem;
+}
+
+/* ✅ Animação para o efeito de digitação */
+.typing {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+    /* Cursor piscando */
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
+/* Cursor piscando */
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
 }
 
 .buttons {
