@@ -162,16 +162,20 @@
                 </div>
             </div>
         </section>
+
+        <Footer />
     </main>
 </template>
 
 <script>
 import NavigationMenu from "../components/NavigationMenu.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
     name: "HomePage",
     components: {
         NavigationMenu,
+        Footer
     },
     data() {
         return {
