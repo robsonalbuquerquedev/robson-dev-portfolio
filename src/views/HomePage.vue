@@ -69,6 +69,69 @@
                 </div>
             </div>
         </section>
+
+        <!-- Seção Habilidades -->
+        <section class="skills" id="habilidades">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js skill-icon"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <i class="icon-typescript skill-icon">TS</i>
+                    <span>TypeScript</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code skill-icon icon-jquery"></i>
+                    <span>jQuery</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-vuejs skill-icon"></i>
+                    <span>Vue.js</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-node skill-icon"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-card">
+                    <i class="icon-sass skill-icon">Sass</i>
+                    <span>Sass</span>
+                </div>
+                <div class="skill-card">
+                    <i class="icon-tailwind skill-icon">TW</i>
+                    <span>Tailwind</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-figma skill-icon"></i>
+                    <span>Figma</span>
+                </div>
+                <div class="skill-card">
+                    <i class="icon-gimp skill-icon">Gimp</i>
+                    <span>Gimp</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <span>Maven</span>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -332,6 +395,117 @@ export default {
     pointer-events: none;
 }
 
+/* 🔹 Seção Habilidades */
+.skills {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* 🔹 Grid Responsivo */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 🔹 Cartões das habilidades */
+.skill-card {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Ícones */
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #00d8ff;
+}
+
+/* Ícones personalizados (Sass, Tailwind, Gimp, TypeScript) */
+.icon-sass {
+    color: #cc6699;
+}
+
+.icon-tailwind {
+    color: #38b2ac;
+}
+
+.icon-gimp {
+    color: #fff;
+}
+
+.icon-typescript {
+    color: #007acc;
+    font-weight: bold;
+}
+
+.icon-jquery {
+    color: #0769ad;
+}
+
+/* 🔹 Texto das habilidades */
+.skill-card span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 🔹 Ajuste para telas grandes - Ocupa toda a largura */
+@media (min-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(9, 1fr);
+    }
+}
+
+/* 🔹 Ajuste para telas médias */
+@media (max-width: 1199px) {
+    .skills-container {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* 🔹 Ajuste para telas médias */
+@media (max-width: 930px) {
+    .skills-container {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+/* 🔹 Ajuste para telas médias */
+@media (max-width: 930px) {
+    .skills-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
 /* 🔹 Responsividade */
 @media (max-width: 768px) {
     .about-content {
@@ -357,6 +531,29 @@ export default {
 
     .project-links {
         flex-direction: column;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 🔹 Ajuste para telas médias */
+@media (max-width: 620px) {
+    .skills-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 431px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
