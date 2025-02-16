@@ -132,6 +132,36 @@
                 </div>
             </div>
         </section>
+
+        <!-- Seção Contato -->
+        <section class="contact" id="contato">
+            <h2 class="section-title">Me Contate</h2>
+            <div class="contact-container">
+                <!-- Formulário -->
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Seu Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Seu Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone">
+                    </div>
+                </form>
+
+                <!-- Campo de Mensagem -->
+                <div class="message-box">
+                    <label for="message"><i class="fas fa-comment"></i> Sua Mensagem</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem"
+                        required></textarea>
+                    <button type="submit" class="btn btn-send">Enviar Mensagem</button>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -478,6 +508,130 @@ export default {
     color: #fff;
 }
 
+/* 🔹 Seção Contato */
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* 🔹 Layout usando Grid */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    gap: 30px;
+    align-items: center;
+    background: #2a2a2a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
+
+/* 🔹 Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 1.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #00d8ff;
+    outline: none;
+}
+
+/* 🔹 Caixa de Mensagem */
+.message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message-box label {
+    font-size: 1.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.message-box textarea {
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: border 0.3s;
+    resize: none;
+}
+
+.message-box textarea:focus {
+    border-color: #00d8ff;
+    outline: none;
+}
+
+/* 🔹 Botão */
+.btn-send {
+    padding: 12px 20px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #00d8ff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-send:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 216, 255, 0.3);
+}
+
 /* 🔹 Ajuste para telas grandes - Ocupa toda a largura */
 @media (min-width: 1200px) {
     .skills-container {
@@ -535,6 +689,10 @@ export default {
 
     .skills-container {
         grid-template-columns: repeat(5, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
     }
 }
 
