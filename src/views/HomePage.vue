@@ -139,27 +139,30 @@
             <div class="contact-container">
                 <!-- Formulário -->
                 <form class="contact-form" action="https://formsubmit.co/robalbuquerque98@gmail.com" method="POST">
-                    <div class="form-group">
-                        <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
-                        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Seu Email</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Seu Telefone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Seu Email</label>
-                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone"><i class="fas fa-phone"></i> Seu Telefone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone">
+                    <!-- Campo de Mensagem -->
+                    <div class="message-box">
+                        <label for="message"><i class="fas fa-comment"></i> Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem"
+                            required></textarea>
+                        <button type="submit" class="btn btn-send">Enviar Mensagem</button>
                     </div>
                 </form>
-
-                <!-- Campo de Mensagem -->
-                <div class="message-box">
-                    <label for="message"><i class="fas fa-comment"></i> Sua Mensagem</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem"
-                        required></textarea>
-                    <button type="submit" class="btn btn-send">Enviar Mensagem</button>
-                </div>
+                <!-- Mensagem de feedback -->
+                <p v-if="message" class="feedback-message">{{ message }}</p>
             </div>
         </section>
 
@@ -182,6 +185,13 @@ export default {
             fullText: "Desenvolvedor Frontend",
             typedText: "",
             typingIndex: 0,
+            formData: {
+                name: "",
+                email: "",
+                phone: "",
+                message: "",
+            },
+
         };
     },
     mounted() {
@@ -194,6 +204,36 @@ export default {
                 this.typingIndex++;
                 setTimeout(this.typeText, 100); // Controla a velocidade da digitação (100ms)
             }
+        },
+        async handleSubmit(event) {
+            this.sending = true;
+            this.message = "";
+
+            try {
+                const formData = new FormData(event.target);
+
+                const response = await fetch("https://formsubmit.co/robalbuquerque98@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    this.message = "✅ Mensagem enviada com sucesso!";
+                    this.resetForm();
+                } else {
+                    this.message = "❌ Erro ao enviar mensagem. Tente novamente.";
+                }
+            } catch (error) {
+                this.message = "❌ Erro ao conectar ao servidor.";
+            } finally {
+                this.sending = false;
+            }
+        },
+        resetForm() {
+            this.formData.name = "";
+            this.formData.email = "";
+            this.formData.phone = "";
+            this.formData.message = "";
         },
     },
 };
@@ -518,6 +558,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 80px 10%;
     text-align: center;
     background-color: #1a1a1a;
@@ -537,11 +578,12 @@ export default {
 
 /* 🔹 Layout usando Grid */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     gap: 30px;
+    justify-content: center;
     align-items: center;
     background: #2a2a2a;
     padding: 40px;
@@ -555,12 +597,27 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+}
+
+/* 🔹 Agrupa os campos de entrada */
+.form-fields, .message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.form-group input, .message-box textarea {
+    width: 100%;
 }
 
 .form-group label {
@@ -629,6 +686,7 @@ export default {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: center;
 }
 
 .btn-send:hover {
@@ -693,10 +751,6 @@ export default {
 
     .skills-container {
         grid-template-columns: repeat(5, 1fr);
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
     }
 }
 
