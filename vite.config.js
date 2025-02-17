@@ -1,8 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-// https://vite.dev/config/
+// Detecta se está rodando no GitHub Pages ou em outro ambiente
+const isGitHubPages = process.env.NODE_ENV === 'production' && process.env.VERCEL === undefined;
+
 export default defineConfig({
-  base: '/robson-dev-portfolio/',
+  base: isGitHubPages ? '/robson-dev-portfolio/' : '/',
   plugins: [vue()],
 });
