@@ -41,9 +41,11 @@ npm run dev
 O projeto estará disponível em http://localhost:5173/.
 
 ### 🌎 Deploy
-Este portfólio pode ser hospedado em plataformas como:
+O portfólio está disponível online:
+- 🔗[Acesse o Portfólio](https://robson-dev-portfolio.vercel.app/#/)
 
-- [Vercel](https://vercel.com/)
+Ele pode ser facilmente hospedado em plataformas como:
+- [Vercel](https://vercel.com/) (Hospedagem atual)
 - [Netlify](https://www.netlify.com/)
 
 ### 📞 Contato
