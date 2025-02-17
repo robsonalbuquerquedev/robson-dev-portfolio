@@ -138,27 +138,27 @@
             <h2 class="section-title">Me Contate</h2>
             <div class="contact-container">
                 <!-- Formulário -->
-                <form class="contact-form" action="https://formsubmit.co/robalbuquerque98@gmail.com" method="POST">
+                <form class="contact-form" @submit.prevent="handleSubmit">
                     <div class="form-fields">
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
-                            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                            <input type="text" id="name" name="name" v-model="formData.name" placeholder="Digite seu nome" required>
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Seu Email</label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                            <input type="email" id="email" name="email" v-model="formData.email" placeholder="Digite seu email" required>
                         </div>
                         <div class="form-group">
                             <label for="phone"><i class="fas fa-phone"></i> Seu Telefone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone">
+                            <input type="tel" id="phone" name="phone" v-model="formData.phone" placeholder="Digite seu telefone">
                         </div>
                     </div>
                     <!-- Campo de Mensagem -->
                     <div class="message-box">
                         <label for="message"><i class="fas fa-comment"></i> Sua Mensagem</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem"
+                        <textarea id="message" name="message" rows="5" v-model="formData.message" placeholder="Digite sua mensagem"
                             required></textarea>
-                        <button type="submit" class="btn btn-send">Enviar Mensagem</button>
+                        <button type="submit" class="btn btn-send" :disabled="sending">{{ sending ? "Enviando..." : "Enviar Mensagem" }}</button>
                     </div>
                 </form>
                 <!-- Mensagem de feedback -->
@@ -185,6 +185,8 @@ export default {
             fullText: "Desenvolvedor Frontend",
             typedText: "",
             typingIndex: 0,
+            sending: false,
+            message: "",
             formData: {
                 name: "",
                 email: "",
@@ -211,8 +213,12 @@ export default {
 
             try {
                 const formData = new FormData(event.target);
+                formData.append("name", this.formData.name);
+                formData.append("email", this.formData.email);
+                formData.append("phone", this.formData.phone);
+                formData.append("message", this.formData.message);
 
-                const response = await fetch("https://formsubmit.co/robalbuquerque98@gmail.com", {
+                const response = await fetch("https://formsubmit.co/ajax/98a2cc209e9dfb5f218da9ba79920ca0", {
                     method: "POST",
                     body: formData,
                 });
