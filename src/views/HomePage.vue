@@ -138,7 +138,7 @@
             <h2 class="section-title">Me Contate</h2>
             <div class="contact-container">
                 <!-- Formulário -->
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/robalbuquerque98@gmail.com" method="POST">
                     <div class="form-group">
                         <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
                         <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
