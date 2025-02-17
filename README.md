@@ -46,8 +46,6 @@ Este portfólio pode ser hospedado em plataformas como:
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/71e0f8e0-4b3b-4a47-bf03-eaf775e72a29/deploy-status)](https://app.netlify.com/sites/robsondev/deploys)
-
 ### 📞 Contato
 Me encontre nas redes sociais:
 - [LinkedIn](https://linkedin.com/in/robson-monteiro-de-albuquerque-8b3853230)
