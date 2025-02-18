@@ -68,6 +68,19 @@
                     </div>
                 </div>
             </div>
+            <div class="project-card">
+                <h3 class="project-title">AprendaMais Courses</h3>
+                <img src="../assets/img/projeto03.png" alt="Projeto AprendaMais Courses" class="project-image">
+                <p class="project-description">
+                    O <strong>AprendaMais Courses</strong> foi feito com ❤️ para todos que querem aprender inglês! 🎯
+                </p>
+                <div class="project-links">
+                    <a href="#" class="btn btn-disabled" onclick="return false;">Em Manutenção</a>
+                    <a href="https://github.com/rma98/aprendamaisCourses.git" target="_blank" class="btn btn-repo">
+                        <i class="fab fa-github"></i> Repositório
+                    </a>
+                </div>
+            </div>
         </section>
 
         <!-- Seção Habilidades -->
@@ -142,23 +155,27 @@
                     <div class="form-fields">
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> Seu Nome</label>
-                            <input type="text" id="name" name="name" v-model="formData.name" placeholder="Digite seu nome" required>
+                            <input type="text" id="name" name="name" v-model="formData.name"
+                                placeholder="Digite seu nome" required>
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Seu Email</label>
-                            <input type="email" id="email" name="email" v-model="formData.email" placeholder="Digite seu email" required>
+                            <input type="email" id="email" name="email" v-model="formData.email"
+                                placeholder="Digite seu email" required>
                         </div>
                         <div class="form-group">
                             <label for="phone"><i class="fas fa-phone"></i> Seu Telefone</label>
-                            <input type="tel" id="phone" name="phone" v-model="formData.phone" placeholder="Digite seu telefone">
+                            <input type="tel" id="phone" name="phone" v-model="formData.phone"
+                                placeholder="Digite seu telefone">
                         </div>
                     </div>
                     <!-- Campo de Mensagem -->
                     <div class="message-box">
                         <label for="message"><i class="fas fa-comment"></i> Sua Mensagem</label>
-                        <textarea id="message" name="message" rows="5" v-model="formData.message" placeholder="Digite sua mensagem"
-                            required></textarea>
-                        <button type="submit" class="btn btn-send" :disabled="sending">{{ sending ? "Enviando..." : "Enviar Mensagem" }}</button>
+                        <textarea id="message" name="message" rows="5" v-model="formData.message"
+                            placeholder="Digite sua mensagem" required></textarea>
+                        <button type="submit" class="btn btn-send" :disabled="sending">{{ sending ? "Enviando..." :
+                            "Enviar Mensagem" }}</button>
                     </div>
                 </form>
                 <!-- Mensagem de feedback -->
@@ -609,7 +626,8 @@ export default {
 }
 
 /* 🔹 Agrupa os campos de entrada */
-.form-fields, .message-box {
+.form-fields,
+.message-box {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -622,7 +640,8 @@ export default {
     gap: 8px;
 }
 
-.form-group input, .message-box textarea {
+.form-group input,
+.message-box textarea {
     width: 100%;
 }
 
