@@ -422,6 +422,7 @@ export default {
 .project-card {
     background: #1e1e1e;
     padding: 20px;
+    margin-bottom: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
