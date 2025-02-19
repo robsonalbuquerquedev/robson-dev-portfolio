@@ -87,7 +87,7 @@ export default {
     transition: 0.3s;
     cursor: pointer;
     flex-shrink: 0;
-    margin-right: 25%;
+    flex: 0.6;
 }
 
 .logo:hover {
