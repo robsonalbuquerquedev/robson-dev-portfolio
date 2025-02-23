@@ -37,13 +37,40 @@
             <h2 class="section-title">Meus Projetos</h2>
             <div class="projects-container">
                 <div class="project-card">
+                    <h3 class="project-title">AprendaMais Courses</h3>
+                    <img src="../assets/img/projeto03.png" alt="Projeto AprendaMais Courses" class="project-image">
+                    <p class="project-description">
+                        O <strong>AprendaMais Courses</strong> foi feito com ❤️ para todos que querem aprender inglês!
+                        🎯
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-disabled" onclick="return false;">Em Manutenção</a>
+                        <a href="https://github.com/rma98/aprendamaisCourses.git" target="_blank" class="btn btn-repo">
+                            <i class="fab fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Galeria de Artes</h3>
+                    <img src="../assets/img/projeto04.png" alt="Projeto Galeria de Artes" class="project-image">
+                    <p class="project-description">
+                        A <strong>Galeria de Artes</strong> é um projeto desenvolvido com Vue 3 + Vite para exibir uma
+                        galeria de artes digitais.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://art-gallery-murex-kappa.vercel.app/#/" target="_blank" class="btn">Visualizar
+                            Projeto</a>
+                        <a href="https://github.com/rma98/artGallery.git" target="_blank" class="btn btn-repo">
+                            <i class="fab fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
                     <h3 class="project-title">Gerenciamento de Recursos</h3>
                     <img src="../assets/img/projeto01.png" alt="Projeto Gerenciamento de Recursos"
                         class="project-image">
                     <p class="project-description">
-                        O <strong>ResourcesManagement</strong> é uma aplicação web desenvolvida com Vue.js e Spring Boot
-                        para
-                        gerenciar salas e laboratórios em uma instituição de ensino.
+                        O <strong>ResourcesManagement</strong> é uma aplicação web para gerenciar salas e laboratórios.
                     </p>
                     <div class="project-links">
                         <a href="https://rma98.github.io/resourcesManagement/#/" target="_blank" class="btn">Visualizar
@@ -53,7 +80,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="project-card">
+                <!-- <div class="project-card">
                     <h3 class="project-title">Monitora Palmares</h3>
                     <img src="../assets/img/projeto02.png" alt="Projeto Monitora Palmares" class="project-image">
                     <p class="project-description">
@@ -66,20 +93,7 @@
                             <i class="fab fa-github"></i> Repositório Privado
                         </a>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3 class="project-title">AprendaMais Courses</h3>
-                <img src="../assets/img/projeto03.png" alt="Projeto AprendaMais Courses" class="project-image">
-                <p class="project-description">
-                    O <strong>AprendaMais Courses</strong> foi feito com ❤️ para todos que querem aprender inglês! 🎯
-                </p>
-                <div class="project-links">
-                    <a href="#" class="btn btn-disabled" onclick="return false;">Em Manutenção</a>
-                    <a href="https://github.com/rma98/aprendamaisCourses.git" target="_blank" class="btn btn-repo">
-                        <i class="fab fa-github"></i> Repositório
-                    </a>
-                </div>
+                </div> -->
             </div>
         </section>
 
