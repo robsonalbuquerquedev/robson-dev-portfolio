@@ -44,7 +44,8 @@
                         🎯
                     </p>
                     <div class="project-links">
-                        <a href="#" class="btn btn-disabled" onclick="return false;">Em Manutenção</a>
+                        <a href="https://rma98.github.io/aprendamaisCourses/#/" target="_blank" class="btn">Visualizar
+                            Projeto</a>
                         <a href="https://github.com/rma98/aprendamaisCourses.git" target="_blank" class="btn btn-repo">
                             <i class="fab fa-github"></i> Repositório
                         </a>
