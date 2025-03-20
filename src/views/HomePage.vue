@@ -52,6 +52,21 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <h3 class="project-title">Página de Atividades</h3>
+                    <img src="../assets/img/projeto05.png" alt="Projeto Página de Atividades"
+                        class="project-image">
+                    <p class="project-description">
+                        A <strong>Página de Atividades</strong> é dedicada às minhas atividades durante o curso de ADS no IFPE
+                    </p>
+                    <div class="project-links">
+                        <a href="https://rma98.github.io/ifpe-ads-activities/#/" target="_blank" class="btn">Visualizar
+                            Projeto</a>
+                        <a href="https://github.com/rma98/ifpe-ads-activities.git" target="_blank" class="btn btn-repo">
+                            <i class="fab fa-github"></i> Repositório
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
                     <h3 class="project-title">Galeria de Artes</h3>
                     <img src="../assets/img/projeto04.png" alt="Projeto Galeria de Artes" class="project-image">
                     <p class="project-description">
