@@ -20,7 +20,7 @@ Este é um portfólio desenvolvido com **Vue 3 + Vite**, apresentando informaç�
 ## 🚀 Como Rodar o Projeto
 ### 1️⃣ Clone o repositório:
 ```sh
-git clone https://github.com/rma98/robson-dev-portfolio.git
+git clone https://github.com/robsonalbuquerquedev/robson-dev-portfolio.git
 ```
 
 ### 2️⃣ Acesse a pasta do projeto:
