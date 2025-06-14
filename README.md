@@ -51,7 +51,7 @@ Ele pode ser facilmente hospedado em plataformas como:
 ### 📞 Contato
 Me encontre nas redes sociais:
 - [LinkedIn](https://linkedin.com/in/robson-monteiro-de-albuquerque-8b3853230)
-- [GitHub](https://github.com/rma98)
+- [GitHub](https://github.com/robsonalbuquerquedev)
 - [Instagram](robson.albuquerque_cm)
 
 ### 📌 Este projeto é de código aberto e pode ser modificado conforme necessário.
