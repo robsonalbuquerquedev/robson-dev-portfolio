@@ -13,16 +13,24 @@
                     <p class="typing">{{ typedText }}</p>
 
                     <div class="buttons">
-                        <a href="/robson-cv.pdf" download class="btn">Download CV</a>
-                        <a href="https://wa.me/+5581971168633" target="_blank" class="btn btn-contact">Contato</a>
+                        <a href="/robson-cv.pdf" download class="btn">📄 Download CV</a>
+                        <a href="https://robson-dev-cv.vercel.app" target="_blank" class="btn">🌐 Ver Online</a>
+                        <a href="https://wa.me/+5581971168633" target="_blank" class="btn btn-contact">📞 Contato</a>
                     </div>
 
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/robson-monteiro-de-albuquerque-8b3853230/" target="_blank"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/rma98" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://instagram.com/robson.albuquerque_cm/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/in/robson-monteiro-de-albuquerque-8b3853230/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/robsonalbuquerquedev" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/robson.albuquerque_cm/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="http://lattes.cnpq.br/8177670965841498" target="_blank" title="Currículo Lattes">
+                            <i class="fas fa-book-open"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -53,10 +61,10 @@
                 </div>
                 <div class="project-card">
                     <h3 class="project-title">Página de Atividades</h3>
-                    <img src="../assets/img/projeto05.png" alt="Projeto Página de Atividades"
-                        class="project-image">
+                    <img src="../assets/img/projeto05.png" alt="Projeto Página de Atividades" class="project-image">
                     <p class="project-description">
-                        A <strong>Página de Atividades</strong> é dedicada às minhas atividades durante o curso de ADS no IFPE
+                        A <strong>Página de Atividades</strong> é dedicada às minhas atividades durante o curso de ADS
+                        no IFPE
                     </p>
                     <div class="project-links">
                         <a href="https://rma98.github.io/ifpe-ads-activities/#/" target="_blank" class="btn">Visualizar
